@@ -1,0 +1,29 @@
+// Removal of Babel Stage Presets - https://babeljs.io/blog/2018/07/27/removing-babels-stage-presets
+{
+  "env": {
+    "development": {
+      "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+      ],
+      "plugins": [
+        "@babel/plugin-proposal-class-properties"
+      ]
+    },
+    "test": {
+      "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+      ],
+      "plugins": [
+        "@babel/plugin-proposal-class-properties"
+      ]
+    },
+    "production": {
+      "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+      ]
+    }
+  }
+}

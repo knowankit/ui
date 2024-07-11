@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+
+// Generic styles
+
+/*
+   Adding this overrides because with downgraded version 
+   of emotion/styled package in Bluehaven material ui styles are taking 
+   precedent over the ant styles
+*/
+.ant-body-override {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+// Ant Design styles
+.ant-layout {
+  .ant-layout-header {
+    box-shadow: 0 1px 4px 0 rgba(0, 21, 41, 0.14);
+    z-index: 1;
+    background-color: #fff;
+    padding: 0 24px;
+    display: flex;
+    justify-content: flex-end;
+
+    > .link {
+      margin-left: 35px;
+
+      > .anticon {
+        font-size: 20px;
+        transform: none;
+      }
+    }
+  }
+
+  &.ant-layout-has-sider {
+    min-height: calc(100vh - 64px);
+  }
+}
+
+.ant-dropdown-menu {
+  max-height: 500px;
+  overflow-y: auto !important;
+}
+
+.page {
+  .page-meta {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    background-color: #fff;
+    margin: 0;
+
+    .page-title {
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.65);
+      font-family: "Open Sans";
+      font-size: 20px;
+      line-height: 32px;
+    }
+
+    .page-actions {
+      display: flex;
+      align-items: center;
+
+      & > * + * {
+        margin-left: 15px;
+      }
+
+      > .ant-input-search {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .page-navigation {
+    background-color: #fff;
+
+    .ant-tabs-bar {
+      padding: 0 24px;
+      background-color: #fff;
+      margin: 0;
+
+      .ant-tabs-tab {
+        padding: 16px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 14px;
+        font-family: "Open Sans";
+        line-height: 22px;
+      }
+    }
+  }
+
+  .page-content {
+    margin: 24px;
+    background-color: #fff;
+    padding: 18px 24px;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    min-height: calc(100vh - 250px);
+    position: relative;
+
+    .ant-table-thead > tr > th {
+      background: transparent;
+    }
+
+    // TODO : Remove these Styles
+    &.show-page {
+      position: relative;
+      min-height: calc(100vh - 180px);
+      padding-bottom: 100px;
+
+      .submit-wrapper {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: #fafafc;
+        margin: 0 -24px;
+        padding: 18px 24px;
+        border-radius: 0 0 4px 4px;
+
+        .ant-form-item-children > * + * {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+
+  .multi-panel-content {
+    .submit-wrapper {
+      background-color: #fafafc;
+      margin: 0 -24px -18px;
+      padding: 18px 24px;
+      border-radius: 0 0 4px 4px;
+
+      .ant-form-item-children > * + * {
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
+.ant-form-item-label {
+  label {
+    &:before,
+    &:after {
+      content: "";
+    }
+  }
+}
+.ant-list-item-meta-content {
+  flex: 1 0 auto; // IE fix for List.Meta, where flex-basis is set to 0px if not defined
+}
+label.ant-form-item-required {
+  &:after {
+    content: "*";
+    color: #03a9f4;
+    font-size: 18px;
+  }
+}
+
+.ant-btn-primary,
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background-color: #1565c0;
+  border-color: #1565c0;
+}
+
+.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  background-color: #096DD9;
+  border-color: #096DD9;
+}

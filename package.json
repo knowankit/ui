@@ -1,0 +1,70 @@
+{
+  "name": "ui",
+  "version": "0.0.1",
+  "description": "UI Components",
+  "author": "Bang The Table",
+  "scripts": {
+    "build": "rm -rf dist && yarn build:js && yarn build:adminCSS",
+    "build:js": "babel --plugins @babel/plugin-transform-modules-umd src --out-dir ./dist",
+    "build:adminCSS": "lessc --strict-imports --clean-css='--s1 --advanced --compatibility=ie11' --js ./src/admin/styles.less ./dist/admin/styles.css",
+    "test": "standard",
+    "lint": "standard --fix",
+    "prestorybook": "yarn build:adminCSS",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook:deploy": "storybook-to-ghpages"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.11.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-transform-modules-umd": "^7.2.0",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.11.2",
+    "@storybook/addon-a11y": "5.3.19",
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-centered": "^5.1.10",
+    "@storybook/addon-info": "^5.1.10",
+    "@storybook/addon-knobs": "^5.1.10",
+    "@storybook/addon-options": "^5.1.10",
+    "@storybook/react": "5.1.10",
+    "@storybook/storybook-deployer": "^2.8.1",
+    "babel-eslint": "10.1.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-react-docgen": "^4.1.0",
+    "css-loader": "^4.2.0",
+    "husky": "^4.2.5",
+    "less": "^3.9.0",
+    "less-plugin-clean-css": "^1.5.1",
+    "prop-types": "^15.7.2",
+    "react-docgen": "4.1.1",
+    "react-syntax-highlighter": "^13.2.1",
+    "standard": "^13.0.1",
+    "storybook-addon-smart-knobs": "^6.0.0",
+    "style-loader": "^1.0.0"
+  },
+  "dependencies": {
+    "antd": "3.24.3",
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.17.11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^4.2.0",
+    "chart.js": "^2.9.0",
+    "react-chartjs-2": "^2.9.0",
+    "chartjs-plugin-datalabels": "0.7.0"
+  },
+  "license": "ISC",
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "dist/"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && yarn test && yarn build && git add dist"
+    }
+  }
+}
