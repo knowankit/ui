@@ -34,7 +34,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-react-docgen": "^4.1.0",
     "css-loader": "^4.2.0",
-    "husky": "^4.2.5",
+    "husky": "^9.1.5",
     "less": "^3.9.0",
     "less-plugin-clean-css": "^1.5.1",
     "prop-types": "^15.7.2",
